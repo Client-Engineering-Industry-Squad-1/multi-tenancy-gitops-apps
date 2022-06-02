@@ -23,7 +23,7 @@ spec:
         memory: 1Gi
     readinessProbe:
       failureThreshold: 1
-      initialDelaySeconds: 10
+      initialDelaySeconds: 100
       periodSeconds: 5
       successThreshold: 1
       timeoutSeconds: 3
