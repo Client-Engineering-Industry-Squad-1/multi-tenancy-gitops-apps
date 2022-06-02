@@ -1,0 +1,3 @@
+resources:
+- queuemanager/ibm-queuemanager-instance.yaml
+- configmap/msqsc-configmap.yaml

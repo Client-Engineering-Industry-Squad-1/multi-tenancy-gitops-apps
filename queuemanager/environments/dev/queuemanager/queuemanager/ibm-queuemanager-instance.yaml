@@ -1,0 +1,80 @@
+apiVersion: mq.ibm.com/v1beta1
+kind: QueueManager
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: '320'
+  name: ibm-queuemanager-instance
+  namespace: tools
+spec:
+  license:
+    accept: true
+    license: L-APIG-BYHCL7
+    metric: ProcessorValueUnit
+    use: Development
+  queueManager:
+    metrics:
+      enabled: true
+    resources:
+      limits:
+        cpu: '1'
+        memory: 1Gi
+      requests:
+        cpu: '1'
+        memory: 1Gi
+    readinessProbe:
+      failureThreshold: 1
+      initialDelaySeconds: 10
+      periodSeconds: 5
+      successThreshold: 1
+      timeoutSeconds: 3
+    route:
+      enabled: true
+    name: QM5
+    livenessProbe:
+      failureThreshold: 1
+      initialDelaySeconds: 90
+      periodSeconds: 10
+      successThreshold: 1
+      timeoutSeconds: 5
+    imagePullPolicy: Always
+    debug: false
+    mqsc:
+      - configMap:
+          items:
+            - static-definitions.mqsc
+          name: mqsc-configmap
+    logFormat: Basic
+    availability:
+      type: SingleInstance
+      updateStrategy: RollingUpdate
+    image: >-
+      docker.io/ibmcom/mq@sha256:ab781c17c563c216002f3abb737aebcbe1e586d0b8c1dab1a2da8294e6edcc2c
+    storage:
+      defaultClass: standard
+      persistedData:
+        enabled: false
+      queueManager:
+        class: standard
+        size: 2Gi
+        type: persistent-claim
+      recoveryLogs:
+        enabled: false
+  securityContext:
+    initVolumeAsRoot: false
+  template:
+    pod:
+      containers:
+        - env:
+            - name: MQSNOAUT
+              value: 'yes'
+          name: qmgr
+          resources: {}
+  terminationGracePeriodSeconds: 30
+  tracing:
+    agent: {}
+    collector: {}
+    enabled: false
+    namespace: ''
+  version: 9.2.3.0-r1
+  web:
+    enabled: true

@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: dev-queuemanager-instance
+  annotations:
+    argocd.argoproj.io/sync-wave: "300"
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: validation-flow-migration
+    server: https://kubernetes.default.svc
+  project: applications
+  source:
+    path: queuemanager/environments/dev/queuemanager
+    repoURL: https://github.com/Client-Engineering-Industry-Squad-1/multi-tenancy-gitops-apps.git
+    targetRevision: master
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

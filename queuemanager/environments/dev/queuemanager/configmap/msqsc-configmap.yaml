@@ -1,0 +1,18 @@
+apiVersion: v1
+data:
+  static-definitions.mqsc: |
+    DEFINE QLOCAL(DEV.QUEUE.1) BOQNAME(DEV.QUEUE.1.BOQ) BOTHRESH(3) REPLACE
+    DEFINE QLOCAL(DEV.QUEUE.1.BOQ) REPLACE
+    * Use a different dead letter queue, for undeliverable messages
+    DEFINE QLOCAL('DEV.DEAD.LETTER.QUEUE') REPLACE
+    ALTER QMGR DEADQ('DEV.DEAD.LETTER.QUEUE')
+    DEFINE CHANNEL('DEV.APP.SVRCONN') CHLTYPE(SVRCONN)
+    ALTER QMGR CHLAUTH (DISABLED)
+    * DEFINE CHANNEL('MONITORING_CHL') CHLTYPE(SVRCONN)
+    * SET CHLAUTH(MONITORING_CHL) TYPE(BLOCKUSER) USERLIST(NOBODY)
+    REFRESH SECURITY TYPE(CONNAUTH)
+kind: ConfigMap
+metadata:
+  name: mqsc-configmap
+  annotations:
+    argocd.argoproj.io/sync-wave: '300'
