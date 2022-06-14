@@ -3,13 +3,13 @@ kind: Route
 metadata:
   annotations:
     haproxy.router.openshift.io/timeout: "{{ .Values.common.proxyTimeoutSeconds }}s"
+    haproxy.router.openshift.io/set-forwarded-headers: if-none
     argocd.argoproj.io/sync-wave: “300"
   labels:
     app: {{ .Values.common.appName }}
     app.kubernetes.io/name: {{ .Values.common.appName }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
-    haproxy.router.openshift.io/set-forwarded-headers: if-none
     helm.sh/chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
     release: {{ .Release.Name }}
   name: pa-route{{ .Values.instanceIdWithinNamespace }}
