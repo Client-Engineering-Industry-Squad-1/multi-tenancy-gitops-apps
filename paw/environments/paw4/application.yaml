@@ -18,6 +18,8 @@ spec:
     path: paw/environments/base
     helm:
       parameters:
+      - name: docker_registry_prefix
+        value: image-registry.openshift-image-registry.svc:5000/paw4
       - name: ingress.host
         value: paw4.ibmpeppa.com
   syncPolicy:
