@@ -14,6 +14,7 @@ spec:
     server: https://kubernetes.default.svc
   project: applications
   source:
+    repoURL: https://github.com/Client-Engineering-Industry-Squad-1/multi-tenancy-gitops-apps.git
     path: paw/environments/base
     helm:
       parameters:
