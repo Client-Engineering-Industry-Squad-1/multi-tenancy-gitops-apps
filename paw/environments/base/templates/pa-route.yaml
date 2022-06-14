@@ -9,6 +9,7 @@ metadata:
     app.kubernetes.io/name: {{ .Values.common.appName }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
+    haproxy.router.openshift.io/set-forwarded-headers: if-none
     helm.sh/chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
     release: {{ .Release.Name }}
   name: pa-route{{ .Values.instanceIdWithinNamespace }}
