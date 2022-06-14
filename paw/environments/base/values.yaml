@@ -261,4 +261,4 @@ waProxy:
   sessionTimeout: 60m
   tm1LoginUrl: http://tm1data.centralus.cloudapp.azure.com:52670/
   xFrameOptions: sameorigin
-serviceAccountName: deployer
+serviceAccountName: default
