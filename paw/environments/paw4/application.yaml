@@ -22,6 +22,8 @@ spec:
         value: image-registry.openshift-image-registry.svc:5000/paw4
       - name: ingress.host
         value: paw4.ibmpeppa.com
+      - name: common.tm1Location
+        value: http://tm1-clients.papoc.internal:5895
   syncPolicy:
     automated:
       prune: true
