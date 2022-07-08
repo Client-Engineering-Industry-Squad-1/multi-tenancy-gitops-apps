@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: paw-paw4
+  name: paw-paw
   annotations:
     argocd.argoproj.io/sync-wave: "300"
   labels:
@@ -10,7 +10,7 @@ metadata:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: paw4
+    namespace: paw
     server: https://kubernetes.default.svc
   project: applications
   source:
@@ -19,11 +19,17 @@ spec:
     helm:
       parameters:
       - name: docker_registry_prefix
-        value: image-registry.openshift-image-registry.svc:5000/paw4
+        value: image-registry.openshift-image-registry.svc:5000/paw
       - name: ingress.host
-        value: paw4.ibmpeppa.com
+        value: paw-poc04.ibmpeppa.com
       - name: common.tm1Location
-        value: http://tm1-clients.papoc.internal:5895
+        value: http://tm1data.ibmpepsicopoc04.internal:5895
+      - name: common.tm1ApplicationsLocation
+        value: http://tm1data.ibmpepsicopoc04.internal:9510/tm1web/
+      - name: common.ibmCognosServlet
+        value: https://cognos-poc04.ibmpeppa.com/p2pd/servlet/dispatch
+      - name: waProxy.ibmCognosGatewayUrl
+        value: https://cognos-poc04.ibmpeppa.com/bi/v1/disp
   syncPolicy:
     automated:
       prune: true
