@@ -27,9 +27,9 @@ spec:
       - name: common.tm1ApplicationsLocation
         value: http://tm1data.ibmpepsicopoc04.internal:9510/tm1web/
       - name: common.ibmCognosServlet
-        value: https://cognos-poc04.ibmpeppa.com/p2pd/servlet/dispatch
+        value: http://cognos-poc04.ibmpeppa.com:9300/p2pd/servlet/dispatch
       - name: waProxy.ibmCognosGatewayUrl
-        value: https://cognos-poc04.ibmpeppa.com/bi/v1/disp
+        value: http://cognos-poc04.ibmpeppa.com:9300/bi/v1/disp
   syncPolicy:
     automated:
       prune: true
