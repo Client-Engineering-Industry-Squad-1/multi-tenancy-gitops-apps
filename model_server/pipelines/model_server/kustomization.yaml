@@ -1,0 +1,5 @@
+bases:
+- ../base
+nameSuffix: -model-server
+patchesStrategicMerge:
+- image_label.yaml

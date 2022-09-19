@@ -1,0 +1,23 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: model-server-build
+spec:
+  source:
+    git:
+      ref: main
+      uri: 'git@github.com:Client-Engineering-Industry-Squad-1/mlops-models.git'
+    type: Git
+    sourceSecret:
+      name: mlops-poc04-deploy
+    contextDir: model_server
+  output:
+    to:
+      kind: DockerImage
+      name: ibmpepsicomlopscr.azurecr.io/model_server:latest
+  strategy:
+    type: Docker
+  triggers:
+    - type: ImageChange
+      imageChange: {}
+    - type: ConfigChange
