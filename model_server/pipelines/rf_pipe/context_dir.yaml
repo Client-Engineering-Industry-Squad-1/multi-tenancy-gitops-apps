@@ -3,4 +3,5 @@ kind: BuildConfig
 metadata:
   name: model-server-build
 spec:
+  source:
     contextDir: model_deployments/rf_pipe
