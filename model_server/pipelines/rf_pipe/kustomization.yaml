@@ -3,3 +3,4 @@ bases:
 nameSuffix: -rf-pipe
 patchesStrategicMerge:
 - image_label.yaml
+- context_dir.yaml
