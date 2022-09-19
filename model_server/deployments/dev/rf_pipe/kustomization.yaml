@@ -1,0 +1,5 @@
+bases:
+- ../../base
+commonLabels:
+  app.kubernetes.io/name: rf-pipe
+nameSuffix: -rf-pipe

@@ -1,0 +1,13 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: model-server
+spec:
+  path: /
+  to:
+    kind: Service
+    name: model-server
+    weight: 100
+  port:
+    targetPort: http
+  wildcardPolicy: None
