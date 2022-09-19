@@ -3,3 +3,5 @@ bases:
 commonLabels:
   app.kubernetes.io/name: rf-pipe
 nameSuffix: -rf-pipe
+patchesStrategicMerge:
+- image_label.yaml

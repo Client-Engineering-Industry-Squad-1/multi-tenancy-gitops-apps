@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: model-server
-        image: ibmpepsicomlopscr.azurecr.io/rf_pipe:0.0.4
+        image: ibmpepsicomlopscr.azurecr.io/model_server:latest
         ports:
         - name: http
           containerPort: 5000

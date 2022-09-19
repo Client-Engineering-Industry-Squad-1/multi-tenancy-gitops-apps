@@ -1,0 +1,10 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: model-server
+spec:
+  template:
+    spec:
+      containers:
+      - name: model-server
+        image: ibmpepsicomlopscr.azurecr.io/rf_pipe:0.0.4
