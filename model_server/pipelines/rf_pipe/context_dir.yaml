@@ -1,0 +1,6 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: model-server-build
+spec:
+    contextDir: model_deployments/rf_pipe

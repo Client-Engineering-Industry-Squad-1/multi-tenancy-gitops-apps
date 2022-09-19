@@ -1,0 +1,8 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: model-server-build
+spec:
+  output:
+    to:
+      name: ibmpepsicomlopscr.azurecr.io/rf_pipe:0.0.4

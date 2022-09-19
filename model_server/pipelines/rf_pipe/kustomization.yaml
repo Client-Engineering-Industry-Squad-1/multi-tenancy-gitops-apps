@@ -1,0 +1,5 @@
+bases:
+- ../base
+nameSuffix: -rf-pipe
+patchesStrategicMerge:
+- image_label.yaml
