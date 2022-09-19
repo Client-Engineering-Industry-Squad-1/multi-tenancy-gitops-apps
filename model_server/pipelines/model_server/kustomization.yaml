@@ -3,3 +3,4 @@ bases:
 nameSuffix: -model-server
 patchesStrategicMerge:
 - image_label.yaml
+- omit_pull_secret.yaml

@@ -17,5 +17,8 @@ spec:
       name: ibmpepsicomlopscr.azurecr.io/model_server:latest
   strategy:
     type: Docker
+    dockerStrategy:
+      pullSecret:
+        name: ibmpepsicomlopscr-secret
   triggers:
     - type: ConfigChange
