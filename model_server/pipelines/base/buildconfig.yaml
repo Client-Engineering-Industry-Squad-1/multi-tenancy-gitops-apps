@@ -18,6 +18,4 @@ spec:
   strategy:
     type: Docker
   triggers:
-    - type: ImageChange
-      imageChange: {}
     - type: ConfigChange
