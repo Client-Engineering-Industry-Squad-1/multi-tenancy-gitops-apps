@@ -7,4 +7,4 @@ spec:
     spec:
       containers:
       - name: model-server
-        image: ibmpepsicomlopscr.azurecr.io/my_other_model:0.0.1
+        image: ibmpepsicomlopscr.azurecr.io/my_other_model:0.0.2
