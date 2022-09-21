@@ -1,0 +1,7 @@
+bases:
+- ../../base
+commonLabels:
+  app.kubernetes.io/name: my-other-model
+nameSuffix: -my-other-model
+patchesStrategicMerge:
+- image_label.yaml
