@@ -1,0 +1,6 @@
+bases:
+- ../base
+nameSuffix: -my-other-model
+patchesStrategicMerge:
+- image_label.yaml
+- context_dir.yaml

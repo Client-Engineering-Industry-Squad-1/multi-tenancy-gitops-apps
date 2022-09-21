@@ -1,0 +1,7 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: model-server-build
+spec:
+  source:
+    contextDir: model_deployments/my_other_model
