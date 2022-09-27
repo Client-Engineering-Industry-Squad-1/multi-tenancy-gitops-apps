@@ -5,4 +5,4 @@ metadata:
 spec:
   output:
     to:
-      name: ibmpepsicomlopscr.azurecr.io/model_server:0.0.7
+      name: ibmpepsicomlopscr.azurecr.io/model_server:0.0.8
