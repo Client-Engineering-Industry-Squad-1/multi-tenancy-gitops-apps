@@ -7,4 +7,4 @@ spec:
     spec:
       containers:
       - name: model-server
-        image: ibmpepsicomlopscr.azurecr.io/rf_pipe:0.0.13
+        image: ibmpepsicomlopscr.azurecr.io/rf_pipe:0.0.14
