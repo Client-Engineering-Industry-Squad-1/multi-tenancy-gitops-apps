@@ -1,0 +1,10 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: document-understanding
+spec:
+  template:
+    spec:
+      containers:
+      - name: model-server
+        image: ibmpepsicomlopscr.azurecr.io/document_understanding:v0.3.1
