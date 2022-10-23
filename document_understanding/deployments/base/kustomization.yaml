@@ -1,0 +1,7 @@
+resources:
+- deployment.yaml
+# - ingress.yaml
+- route.yaml
+- service.yaml
+configurations:
+- config/nameReference.yaml

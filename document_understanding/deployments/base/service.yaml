@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: document-understanding
+spec:
+  selector:
+    app.kubernetes.io/name: document-understanding
+  ports:
+  - name: http
+    protocol: TCP
+    port: 9443
+    targetPort: http
