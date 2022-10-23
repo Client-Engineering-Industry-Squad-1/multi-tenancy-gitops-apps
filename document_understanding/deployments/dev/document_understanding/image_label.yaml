@@ -6,5 +6,5 @@ spec:
   template:
     spec:
       containers:
-      - name: model-server
+      - name: document-understanding
         image: ibmpepsicomlopscr.azurecr.io/document_understanding:v0.3.1
