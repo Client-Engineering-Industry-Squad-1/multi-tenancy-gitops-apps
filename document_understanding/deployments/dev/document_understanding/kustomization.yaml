@@ -1,7 +1,0 @@
-bases:
-- ../../base
-commonLabels:
-  app.kubernetes.io/name: document-understanding
-nameSuffix: -document-understanding
-patchesStrategicMerge:
-- image_label.yaml
