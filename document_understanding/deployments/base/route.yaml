@@ -3,11 +3,13 @@ apiVersion: route.openshift.io/v1
 metadata:
   name: document-understanding
 spec:
-  path: /
   to:
     kind: Service
     name: document-understanding
     weight: 100
   port:
     targetPort: https
+  tls:
+    termination: passthrough
+    insecureEdgeTerminationPolicy: Redirect
   wildcardPolicy: None
