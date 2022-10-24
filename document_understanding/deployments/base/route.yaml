@@ -9,5 +9,5 @@ spec:
     name: document-understanding
     weight: 100
   port:
-    targetPort: http
+    targetPort: https
   wildcardPolicy: None

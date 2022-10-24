@@ -18,5 +18,5 @@ spec:
       - name: document-understanding
         image: ibmpepsicomlopscr.azurecr.io/document_understanding:latest
         ports:
-        - name: http
+        - name: https
           containerPort: 9443

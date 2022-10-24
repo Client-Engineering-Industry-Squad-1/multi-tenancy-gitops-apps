@@ -6,7 +6,7 @@ spec:
   selector:
     app.kubernetes.io/name: document-understanding
   ports:
-  - name: http
+  - name: https
     protocol: TCP
     port: 9443
-    targetPort: http
+    targetPort: https
