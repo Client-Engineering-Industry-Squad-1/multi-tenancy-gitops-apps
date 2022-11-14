@@ -5,4 +5,4 @@ metadata:
 spec:
   output:
     to:
-      name: ibmpepsicomlopscr.azurecr.io/my_other_model:0.0.11
+      name: ibmpepsicomlopscr.azurecr.io/my_other_model:0.0.12
