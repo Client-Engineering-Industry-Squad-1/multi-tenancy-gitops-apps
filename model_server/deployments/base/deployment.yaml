@@ -20,3 +20,16 @@ spec:
         ports:
         - name: http
           containerPort: 5000
+        volumeMounts:
+        - name: payload-logs
+          mountPath: /app/logs
+      - name: payload-collector
+        image: fluent/fluent-bit:2.0.5
+        command: ["/fluent-bit/bin/fluent-bit"]
+        args: ["-i","tail","-p", "path=/fluent-bit/input", "-o", "stdout"]
+        volumeMounts:
+        - name: payload-logs
+          mountPath: /fluent-bit/input
+      volumes:
+      - name: payload-logs
+        emptyDir: {}
