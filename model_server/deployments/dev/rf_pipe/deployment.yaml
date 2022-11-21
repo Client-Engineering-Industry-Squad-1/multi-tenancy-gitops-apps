@@ -11,7 +11,7 @@ spec:
         - name: WOS_AUTH_HEADER
           valueFrom:
             secretKeyRef:
-              name: payload-collector-secrets-my-other-model
+              name: payload-collector-secrets-rf-pipe
               key: WOS_AUTH_HEADER
       - name: payload-collector
         args: ["-c", "/fluent-bit/config/fluentbit.conf"]

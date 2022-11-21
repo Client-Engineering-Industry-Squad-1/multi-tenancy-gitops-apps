@@ -11,6 +11,5 @@ configMapGenerator:
 patchesStrategicMerge:
 - deployment.yaml
 - image_label.yaml
-- payload-collector-sealed-secret.yaml
 resources:
 - payload-collector-sealed-secret.yaml

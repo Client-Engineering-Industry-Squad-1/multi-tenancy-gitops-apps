@@ -3,5 +3,13 @@ bases:
 commonLabels:
   app.kubernetes.io/name: rf-pipe
 nameSuffix: -rf-pipe
+configMapGenerator:
+- name: payload-collector-config
+  files:
+  - payload-collector/fluentbit.conf
+  - payload-collector/parsers.conf
 patchesStrategicMerge:
+- deployment.yaml
 - image_label.yaml
+resources:
+- payload-collector-sealed-secret.yaml
