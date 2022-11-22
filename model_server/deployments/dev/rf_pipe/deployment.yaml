@@ -6,14 +6,13 @@ spec:
   template:
     spec:
       containers:
-      - name: model-server
+      - name: payload-collector
         env:
         - name: WOS_AUTH_HEADER
           valueFrom:
             secretKeyRef:
               name: payload-collector-secrets-rf-pipe
               key: WOS_AUTH_HEADER
-      - name: payload-collector
         args: ["-c", "/fluent-bit/config/fluentbit.conf"]
         volumeMounts:
         - name: payload-collector-config
