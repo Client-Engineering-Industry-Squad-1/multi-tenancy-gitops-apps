@@ -17,6 +17,9 @@ spec:
       containers:
       - name: model-server
         image: ibmpepsicomlopscr.azurecr.io/model_server:latest
+        envFrom:
+          - secretRef:
+              name: rf-pipe-env
         ports:
         - name: http
           containerPort: 5000
