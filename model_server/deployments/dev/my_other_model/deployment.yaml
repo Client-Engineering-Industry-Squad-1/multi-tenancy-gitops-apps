@@ -20,9 +20,9 @@ spec:
       - name: model-server
         envFrom:
           - configMapRef:
-              name: my-other-model-configmap
+              name: my-other-model-configmap-my-other-model
           - secretRef:
-              name: my-other-model-secrets
+              name: my-other-model-secrets-my-other-model
       volumes:
       - name: payload-collector-config
         configMap:

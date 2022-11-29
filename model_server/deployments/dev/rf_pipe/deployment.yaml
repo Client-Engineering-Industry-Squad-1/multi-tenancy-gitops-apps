@@ -20,9 +20,9 @@ spec:
       - name: model-server
         envFrom:
           - configMapRef:
-              name: rf-pipe-configmap
+              name: rf-pipe-configmap-rf-pipe
           - secretRef:
-              name: rf-pipe-secrets
+              name: rf-pipe-secrets-rf-pipe
       volumes:
       - name: payload-collector-config
         configMap:
