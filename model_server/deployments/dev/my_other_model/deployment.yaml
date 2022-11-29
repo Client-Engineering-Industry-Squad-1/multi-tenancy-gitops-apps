@@ -17,6 +17,12 @@ spec:
         volumeMounts:
         - name: payload-collector-config
           mountPath: /fluent-bit/config
+      - name: my-other-model
+        envFrom:
+          - configMapRef:
+              name: my-other-model-configmap
+          - secretRef:
+              name: my-other-model-secrets
       volumes:
       - name: payload-collector-config
         configMap:

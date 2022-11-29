@@ -17,13 +17,13 @@ spec:
         volumeMounts:
         - name: payload-collector-config
           mountPath: /fluent-bit/config
-      volumes:
-      - name: payload-collector-config
-        configMap:
-          name: payload-collector-config
       - name: rf-pipe
         envFrom:
           - configMapRef:
               name: rf-pipe-configmap
           - secretRef:
               name: rf-pipe-secrets
+      volumes:
+      - name: payload-collector-config
+        configMap:
+          name: payload-collector-config
