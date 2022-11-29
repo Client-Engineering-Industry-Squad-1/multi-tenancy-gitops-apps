@@ -1,0 +1,9 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: rf-pipe-configmap
+  namespace: dev
+data:
+  CPD_URL: https://cpd-cpd-instance.apps.ibmpepsicopoc04.eastus.aroapp.io
+  PROJECT_ID: 6a919126-4bdc-40b2-b6e4-4cb53709e351
+  RUNTIME_ENV_APSX_URL: https://20.124.48.112:12443

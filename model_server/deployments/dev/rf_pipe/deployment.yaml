@@ -21,3 +21,9 @@ spec:
       - name: payload-collector-config
         configMap:
           name: payload-collector-config
+      - name: rf-pipe
+        envFrom:
+          - configMapRef:
+              name: rf-pipe-configmap
+          - secretRef:
+              name: rf-pipe-secrets

@@ -17,9 +17,9 @@ spec:
       containers:
       - name: model-server
         image: ibmpepsicomlopscr.azurecr.io/model_server:latest
-        envFrom:
-          - secretRef:
-              name: rf-pipe-env
+        env:
+          - name: PAYLOAD_LOGGING_DIR
+            value: /app/logs
         ports:
         - name: http
           containerPort: 5000

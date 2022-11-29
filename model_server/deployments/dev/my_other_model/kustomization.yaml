@@ -13,3 +13,5 @@ patchesStrategicMerge:
 - image_label.yaml
 resources:
 - payload-collector-sealed-secret.yaml
+- my-other-model-sealed-secret.yaml
+- config/configmap.yaml
