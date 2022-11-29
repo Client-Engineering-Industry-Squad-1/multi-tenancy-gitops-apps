@@ -28,7 +28,7 @@ oc create secret generic my-other-model-secrets${SECRET_SUFFIX} --type=Opaque \
 kubeseal -n dev --controller-name=${SEALED_SECRET_CONTOLLER_NAME} --controller-namespace=${SEALED_SECRET_NAMESPACE} -o yaml < DELETE-my-other-model-secrets.yaml > DELETE-my-other-model-sealed-secret.yaml
 
 # Remove suffix as Kustomize will add
-yq '.metadata.name = "rf-pipe-secrets"' < DELETE-my-other-model-sealed-secret.yaml > my-other-model-sealed-secret.yaml
+yq '.metadata.name = "my-other-model-secrets"' < DELETE-my-other-model-sealed-secret.yaml > my-other-model-sealed-secret.yaml
 
 # NOTE, do not check DELETE-*.yaml files into git!
 rm DELETE-*.yaml
